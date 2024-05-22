@@ -1,0 +1,16 @@
+SELECT *
+FROM fortune_companies;
+
+SELECT company_name, paid_time_off_days, avg_employee_tenure
+FROM fortune_companies
+WHERE paid_time_off_days >= "20"
+AND avg_employee_tenure >= "5";
+
+SELECT company_name,
+CASE WHEN employees >= 100000 THEN "huge"
+WHEN employees >= 10000 THEN "big"
+WHEN employees >= 5000 THEN "medium"
+WHEN employees >=1000 THEN "small"
+ELSE "tiny"
+END AS "company_size"
+FROM fortune_companies;
